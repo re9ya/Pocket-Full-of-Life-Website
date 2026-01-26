@@ -1,0 +1,18 @@
+in/* Cover/coverstyle.css */
+.head {
+    text-align: center;
+    margin-top: 50px;
+
+    font-family: 'Georgia', serif;
+    font-size: xx-large;
+    font-weight: bolder;
+    color:darkred;
+}
+
+.body {
+    padding: 20px;
+    text-align: center;
+
+    font-family: 'Georgia', serif;
+    color:white;
+}
