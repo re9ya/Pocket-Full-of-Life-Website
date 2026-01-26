@@ -1,18 +1,62 @@
-in/* Cover/coverstyle.css */
-.head {
+body {
+    margin: 0;
+    padding: 0;
     text-align: center;
-    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
 
     font-family: 'Georgia', serif;
-    font-size: xx-large;
-    font-weight: bolder;
-    color:darkred;
+
+    background-color: rgb(100, 26, 26);
 }
 
-.body {
-    padding: 20px;
-    text-align: center;
+.cover-title {
+    padding: 40px;
 
-    font-family: 'Georgia', serif;
-    color:white;
+    background-color: rgb(223, 209, 209);
+    box-shadow: 20px 30px 0px rgb(91, 0, 0);
+    border-radius: 16px;
+    border-width: 5px;
+
+    color: darkred;
+    display: flex;
+    font-size: 60px;
+    font-weight: bold;
+    border-radius: 16px;
+}
+
+.cover-pathways1 {
+    margin-top: 60px;
+    border: 2px solid rgb(223, 209, 209);
+    border-radius: 16px;
+
+    color: rgb(223, 209, 209);
+    background-color: rgba(223, 209, 209, 0.229);
+    text-decoration: none;
+    font-size: 50px;
+}
+
+.cover-pathways2 {
+    margin-top: 30px;
+    border: 2px solid rgb(223, 209, 209);
+    border-radius: 16px;
+
+    color: rgb(223, 209, 209);
+    background-color: rgba(223, 209, 209, 0.229);
+    text-decoration: none;
+    font-size: 40px;
+}
+
+.cover-pathways1:hover {
+    background-color:  rgb(223, 209, 209);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cover-pathways2:hover {
+    background-color:  rgb(223, 209, 209);
+    cursor: pointer;
+    transition: 0.3s;
 }
