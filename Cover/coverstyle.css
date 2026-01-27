@@ -1,17 +1,62 @@
-body {
+html, body {
+    height: 100%;
+    width: 100%;
     margin: 0;
-    padding: 0;
+}
+
+body {
+    align-items: flex-start;
+    margin: 0;
+    padding: 50px 0;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    min-height: 100vh;
+    box-sizing: border-box;
 
     font-family: 'Georgia', serif;
 
     background-color: rgb(100, 26, 26);
 }
 
+/* If the screen is smaller than 800px wide... */
+@media only screen and (max-width: 800px) {
+    .cover-title {
+        font-size: 40px; /* Shrink title */
+        white-space: normal; /* Allow it to wrap onto two lines */
+    }
+    .cover-pathways1, .cover-pathways2 {
+        font-size: 30px; /* Shrink links */
+    }
+    .card {
+        padding: 20px; /* Less padding on mobile */
+    }
+}
+
+/*------------------------Card and Container Style----------------------------*/
+.card {
+    background-color: rgba(158, 85, 85, 0.377);
+    border-radius: 32px;
+    border: 2px solid rgb(223, 209, 209);
+    padding: 60px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 9999;
+    margin-top: 20px;
+    max-width: 90%;
+}
+
+.cover-container {
+    display: inline-block;
+    justify-content: center;
+    gap: 40px;
+}
+
+/*----------------------------Title Style----------------------------*/
 .cover-title {
     padding: 40px;
 
@@ -22,41 +67,190 @@ body {
 
     color: darkred;
     display: flex;
-    font-size: 60px;
+    font-size: 100px;
     font-weight: bold;
     border-radius: 16px;
+    white-space: nowrap;
+    transition: transform 0.3s ease;
 }
 
+.cover-title:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/*---------------------------Pathways Styles---------------------------*/
 .cover-pathways1 {
     margin-top: 60px;
     border: 2px solid rgb(223, 209, 209);
     border-radius: 16px;
+    display: inline-block;
+    box-shadow: 12px 16px 0px rgb(91, 0, 0);
 
     color: rgb(223, 209, 209);
     background-color: rgba(223, 209, 209, 0.229);
     text-decoration: none;
-    font-size: 50px;
+    font-size: 80px;
+    white-space: nowrap;
+    transition: transform 0.3s ease;
 }
 
 .cover-pathways2 {
-    margin-top: 30px;
+    margin-top: 100px;
+    margin-bottom: 100px;
     border: 2px solid rgb(223, 209, 209);
     border-radius: 16px;
+    display: inline-block;
+    box-shadow: 12px 16px 0px rgb(91, 0, 0);
 
     color: rgb(223, 209, 209);
     background-color: rgba(223, 209, 209, 0.229);
     text-decoration: none;
-    font-size: 50px;
+    font-size: 75px;
+    white-space: nowrap;
+    transition: transform 0.3s ease;
 }
 
 .cover-pathways1:hover {
     background-color:  rgb(223, 209, 209);
+    transform: scale(1.2);
     cursor: pointer;
     transition: 0.3s;
 }
 
 .cover-pathways2:hover {
     background-color:  rgb(223, 209, 209);
+    transform: scale(1.2);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/*---------------------------Carousel Styles---------------------------*/
+.artwork-title {
+    padding: 30px;
+    margin-bottom: 300px;
+    display: inline-block;
+    justify-content: center;
+
+    font-size: 100px;
+    color: darkred;
+
+    background-color: rgb(223, 209, 209);
+    box-shadow: 20px 30px 0px rgb(91, 0, 0);
+    border-radius: 16px;
+    border-width: 5px;
+}
+
+.carousel {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    gap: 20px;
+}
+
+.slides-window {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    display: flex;
+    justify-self: center;
+    perspective: 1000px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0px;
+    width: 1000px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+
+    opacity: 0;
+    transform: translateX(0) scale(0.5);
+    z-index: 10;
+}
+
+.artworks {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+    border-radius: 16px;
+    box-shadow: 10px 10px 0px rgb(91, 0, 0);
+    border: 2px solid rgb(223, 209, 209);
+    transition: transform 0.3s ease;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: static;
+    margin: 0;
+
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: rgb(223, 209, 209);
+    font-weight: bold;
+    font-size: 40px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    z-index: 1;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateX(-100px) scale(1);
+    z-index: 20;
+}
+
+.slide.prev-ghost{
+    opacity: 0.05;
+    transform: translateX(-650px) scale(0.8);
+    z-index: 5;
+}
+
+.slide.next-ghost{
+    opacity: 0.05;
+    transform: translateX(350px) scale(0.8);
+    z-index: 5;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.185);
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.6s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+.artworks:hover {
+    transform: scale(1.05);
     cursor: pointer;
     transition: 0.3s;
 }

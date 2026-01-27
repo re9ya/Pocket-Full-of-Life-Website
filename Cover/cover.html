@@ -8,13 +8,46 @@
 </head>
 
 <body>
-    <div class="cover-container">
-        <h1 class="cover-title">Welcome to the Pocket Full of Life Website</h1>
+    <div class="card">
+        <div class="cover-container">
+            <h1 class="cover-title">Welcome to the Pocket Full of Life Website</h1>
 
-        <div class="cover-pathways">
-            <a href="aboutthegame.html" class="cover-pathways1">About the Game</a><br>
-            <a href="https://..." class="cover-pathways2">Link to Game on Itch.io</a>
+            <div class="cover-pathways">
+                <a href="aboutthegame.html" class="cover-pathways1">About the Game</a><br>
+                <a href="https://..." class="cover-pathways2">Link to Game on Itch.io</a>
+            </div>
+        </div>
+
+        <h2 class="artwork-title">Artwork Gallery</h2>
+
+        <div class="carousel">
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            
+            <div class="slides-window">
+                <div class="slide">
+                    <img src="Art Folder/Sufficating-Opening.png" alt="Opening Screen" class="artworks">
+                </div>
+                <div class="slide">
+                    <img src="Art Folder/Tico and Entity.png" alt="Tico and Entity" class="artworks">
+                </div>
+                <div class="slide">
+                    <img src="Art Folder/Tico Meme.png" alt="Tico Meme" class="artworks">
+                </div>
+                <div class="slide">
+                    <img src="Art Folder/Tico Pancake Dive.png" alt="Tico Pancake Dive" class="artworks">
+                </div>
+                <div class="slide">
+                    <img src="Art Folder/Tico's VB Fail.png" alt="Tico's VB Fail" class="artworks">
+                </div>
+                <div class="slide">
+                    <img src="Art Folder/Tico's VB Stance.png" alt="Tico's VB Stance" class="artworks"> 
+                </div>
+            </div>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
     </div>
+
+    <script src="carousel.js"></script>
 </body>
 </html>
