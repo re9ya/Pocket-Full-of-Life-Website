@@ -254,3 +254,6 @@ body {
     cursor: pointer;
     transition: 0.3s;
 }
+
+/*TODO: some images are vertical or need to be sized up to actually see the entire work. 
+Figure out how to size each up differently based on artwork size.
